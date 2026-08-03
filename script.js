@@ -1,11 +1,5 @@
-const button = document.querySelector("button");
+const btn = document.getElementById("openBtn");
 
-button.addEventListener("click", () => {
-    button.innerHTML = "❤️ Nice to meet you!";
-    button.style.background = "#ff4d88";
-
-    setTimeout(() => {
-        button.innerHTML = "Talk to Me";
-        button.style.background = "#ff8fab";
-    }, 2500);
-});
+btn.onclick = () => {
+    alert("Welcome Baby ❤️\n\nThis is only the beginning...");
+};
