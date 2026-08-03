@@ -1,5 +1,29 @@
-const btn = document.getElementById("openBtn");
+const text = "Hey Baby...";
 
-btn.onclick = () => {
-    alert("Welcome Baby ❤️\n\nThis is only the beginning...");
+let index = 0;
+
+function typeWriter(){
+
+    if(index < text.length){
+
+        document.getElementById("typewriter").innerHTML += text.charAt(index);
+
+        index++;
+
+        setTimeout(typeWriter,150);
+
+    }
+
+}
+
+window.onload = ()=>{
+
+    typeWriter();
+
 };
+
+document.getElementById("openBtn").addEventListener("click",()=>{
+
+    alert("Chapter 2 is coming... ❤️");
+
+});
