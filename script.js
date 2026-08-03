@@ -31,7 +31,7 @@ document.getElementById("openBtn").addEventListener("click",()=>{
     });
 
 });
-});
+
 const hearts = document.getElementById("hearts");
 
 function createHeart(){
@@ -49,9 +49,7 @@ function createHeart(){
     hearts.appendChild(heart);
 
     setTimeout(()=>{
-
         heart.remove();
-
     },7000);
 
 }
