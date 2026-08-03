@@ -1,9 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector("button");
+const button = document.querySelector("button");
 
-    if (button) {
-        button.addEventListener("click", () => {
-            alert("Hi! I'm Baby 💖\nI'm 8 years old.\nLet's talk together! 🌸");
-        });
-    }
+button.addEventListener("click", () => {
+    button.innerHTML = "❤️ Nice to meet you!";
+    button.style.background = "#ff4d88";
+
+    setTimeout(() => {
+        button.innerHTML = "Talk to Me";
+        button.style.background = "#ff8fab";
+    }, 2500);
 });
