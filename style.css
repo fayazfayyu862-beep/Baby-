@@ -94,4 +94,30 @@ to{
 transform:translateY(-250px);
 }
 
+}.moon{
+position:fixed;
+top:60px;
+right:60px;
+width:180px;
+height:180px;
+border-radius:50%;
+background:radial-gradient(circle,#ffd7f0,#ff9ad5,#ff6bb0);
+box-shadow:
+0 0 40px #ff9ad5,
+0 0 80px #ff7fc7,
+0 0 150px rgba(255,120,200,.6);
+z-index:1;
+animation:moonGlow 4s ease-in-out infinite;
+}
+
+@keyframes moonGlow{
+
+0%,100%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.06);
+}
+
 }
