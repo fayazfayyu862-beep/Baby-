@@ -154,4 +154,49 @@ transform:translateY(-120vh) scale(1.4);
 opacity:0;
 }
 
+}.letter{
+display:none;
+min-height:100vh;
+background:#0b1024;
+padding:60px 20px;
+}
+
+.letter-box{
+
+max-width:700px;
+
+margin:auto;
+
+background:rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:25px;
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 40px rgba(255,100,180,.3);
+
+}
+
+.letter h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+font-size:38px;
+
+color:#ff9fd5;
+
+}
+
+.letter p{
+
+line-height:2;
+
+font-size:20px;
+
+text-align:center;
+
 }
