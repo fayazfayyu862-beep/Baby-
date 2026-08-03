@@ -24,8 +24,13 @@ window.onload = ()=>{
 
 document.getElementById("openBtn").addEventListener("click",()=>{
 
-    alert("Chapter 2 is coming... ❤️");
+    document.getElementById("letter").style.display = "block";
 
+    document.getElementById("letter").scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
 });
 const hearts = document.getElementById("hearts");
 
