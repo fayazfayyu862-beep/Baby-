@@ -26,7 +26,7 @@ const btn = document.getElementById("openBtn");
 console.log(btn);
 btn.addEventListener("click", () => {{
 
-    document.getElementById("letter").style.display = "block";
+    document.getElementById("letter").classList.add("show");
 
     document.getElementById("letter").scrollIntoView({
         behavior: "smooth"
