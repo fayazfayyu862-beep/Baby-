@@ -22,7 +22,9 @@ window.onload = ()=>{
 
 };
 
-document.getElementById("openBtn").addEventListener("click",()=>{
+const btn = document.getElementById("openBtn");
+console.log(btn);
+btn.addEventListener("click", () => {{
 
     document.getElementById("letter").style.display = "block";
 
