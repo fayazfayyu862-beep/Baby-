@@ -16,7 +16,7 @@ window.onload = function () {
 const button = document.getElementById("openBtn");
 
 button.addEventListener("click", function () {
-
+document.getElementById("bgMusic").play();
     document.getElementById("envelope").style.display = "block";
 
 });
