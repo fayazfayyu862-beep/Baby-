@@ -21,7 +21,6 @@ button.addEventListener("click", function () {
 
 });
 
-});
 const hearts = document.getElementById("hearts");
 
 function createHeart(){
@@ -45,3 +44,22 @@ function createHeart(){
 }
 
 setInterval(createHeart,500);
+const envelope = document.getElementById("envelope");
+
+envelope.addEventListener("click", function(){
+
+    envelope.classList.add("open");
+
+    setTimeout(function(){
+
+        const letter = document.getElementById("letter");
+
+        letter.style.display = "block";
+
+        letter.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },800);
+
+});
