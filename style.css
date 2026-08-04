@@ -155,11 +155,20 @@ transform:translateY(-120vh) scale(1.4);
 opacity:0;
 }
 
-}.letter{
+.letter{
 display:none;
 min-height:100vh;
 background:#0b1024;
 padding:60px 20px;
+opacity:0;
+transform:translateY(50px);
+transition:opacity .8s ease, transform .8s ease;
+}
+
+.letter.show{
+display:block;
+opacity:1;
+transform:translateY(0);
 }
 
 .letter-box{
