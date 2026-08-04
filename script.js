@@ -63,3 +63,22 @@ envelope.addEventListener("click", function(){
     },800);
 
 });
+const memories = document.querySelectorAll(".memory");
+
+let current = 0;
+
+setInterval(()=>{
+
+    memories[current].classList.remove("active");
+
+    current++;
+
+    if(current >= memories.length){
+
+        current = 0;
+
+    }
+
+    memories[current].classList.add("active");
+
+},3000);
