@@ -337,3 +337,44 @@ margin-bottom:10px;
 .content-box p{
 line-height:1.7;
 }
+.final{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(#050816,#000);
+}
+
+.final h1{
+    font-size:52px;
+    color:#ffb6dc;
+    margin-bottom:30px;
+}
+
+.final-text{
+    max-width:700px;
+    font-size:22px;
+    line-height:2;
+    color:#f5d8e8;
+    white-space:pre-line;
+}
+
+.final-btn{
+    display:inline-block;
+    margin-top:40px;
+    padding:18px 40px;
+    background:#ff5ca8;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:20px;
+    box-shadow:0 0 30px rgba(255,92,168,.5);
+    transition:0.3s;
+}
+
+.final-btn:hover{
+    transform:scale(1.05);
+}
