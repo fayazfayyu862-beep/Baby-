@@ -13,13 +13,54 @@ window.onload = function () {
     typeWriter();
 };
 
+// =======================
+// Open Button
+// =======================
+
 const button = document.getElementById("openBtn");
 
 button.addEventListener("click", function () {
 
+    // Play Music
+    const music = document.getElementById("bgMusic");
+
+    music.play().catch(function(error){
+        console.log("Music Error:", error);
+    });
+
+    // Hide Button
+    button.style.display = "none";
+
+    // Show Envelope
     document.getElementById("envelope").style.display = "block";
 
 });
+
+// =======================
+// Envelope
+// =======================
+
+const envelope = document.getElementById("envelope");
+
+envelope.addEventListener("click", function(){
+
+    envelope.classList.add("open");
+
+    setTimeout(function(){
+
+        document.getElementById("letter").style.display = "block";
+
+        document.getElementById("letter").scrollIntoView({
+            behavior:"smooth"
+        });
+
+    },1000);
+
+});
+
+// =======================
+// Floating Hearts
+// =======================
 
 const hearts = document.getElementById("hearts");
 
@@ -33,70 +74,72 @@ function createHeart(){
 
     heart.style.left = Math.random()*100 + "vw";
 
-    heart.style.animationDuration = (4 + Math.random()*4) + "s";
+    heart.style.animationDuration = (4 + Math.random()*3) + "s";
 
     hearts.appendChild(heart);
 
-    setTimeout(()=>{
+    setTimeout(function(){
+
         heart.remove();
-    },8000);
+
+    },7000);
 
 }
 
 setInterval(createHeart,500);
-const envelope = document.getElementById("envelope");
 
-envelope.addEventListener("click", function(){
+// =======================
+// Gallery
+// =======================
 
-    envelope.classList.add("open");
-
-    setTimeout(function(){
-
-        const letter = document.getElementById("letter");
-
-        letter.style.display = "block";
-
-        letter.scrollIntoView({
-            behavior:"smooth"
-        });
-
-    },1000);
-
-});
 const slides = document.querySelectorAll(".slide");
 
 let currentSlide = 0;
 
-function showNextSlide() {
+function showSlide(index){
 
-    slides[currentSlide].classList.remove("active");
+    slides.forEach(function(slide){
+
+        slide.classList.remove("active");
+
+    });
+
+    slides[index].classList.add("active");
+
+}
+
+function nextSlide(){
 
     currentSlide++;
 
-    if (currentSlide >= slides.length) {
+    if(currentSlide >= slides.length){
+
         currentSlide = 0;
+
     }
 
-    slides[currentSlide].classList.add("active");
+    showSlide(currentSlide);
+
 }
 
-setInterval(showNextSlide, 4000);
-document.getElementById("nextPhoto").addEventListener("click", function(){
+setInterval(nextSlide,4000);
 
-    slides[currentSlide].classList.remove("active");
+document.getElementById("nextPhoto").addEventListener("click",function(){
 
-    currentSlide = (currentSlide + 1) % slides.length;
-
-    slides[currentSlide].classList.add("active");
+    nextSlide();
 
 });
 
-document.getElementById("prevPhoto").addEventListener("click", function(){
+document.getElementById("prevPhoto").addEventListener("click",function(){
 
-    slides[currentSlide].classList.remove("active");
+    currentSlide--;
 
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    if(currentSlide < 0){
 
-    slides[currentSlide].classList.add("active");
+        currentSlide = slides.length - 1;
+
+    }
+
+    showSlide(currentSlide);
 
 });
