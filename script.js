@@ -81,3 +81,22 @@ function showNextSlide() {
 }
 
 setInterval(showNextSlide, 4000);
+document.getElementById("nextPhoto").addEventListener("click", function(){
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide + 1) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+
+});
+
+document.getElementById("prevPhoto").addEventListener("click", function(){
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+
+    slides[currentSlide].classList.add("active");
+
+});
