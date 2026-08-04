@@ -63,22 +63,21 @@ envelope.addEventListener("click", function(){
     },1000);
 
 });
-const memories = document.querySelectorAll(".memory");
+const slides = document.querySelectorAll(".slide");
 
-let current = 0;
+let currentSlide = 0;
 
-setInterval(()=>{
+function showNextSlide() {
 
-    memories[current].classList.remove("active");
+    slides[currentSlide].classList.remove("active");
 
-    current++;
+    currentSlide++;
 
-    if(current >= memories.length){
-
-        current = 0;
-
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
     }
 
-    memories[current].classList.add("active");
+    slides[currentSlide].classList.add("active");
+}
 
-},3000);
+setInterval(showNextSlide, 4000);
