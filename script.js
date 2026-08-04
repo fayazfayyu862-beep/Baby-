@@ -16,7 +16,7 @@ window.onload = function () {
 const button = document.getElementById("openBtn");
 
 button.addEventListener("click", function () {
-document.getElementById("bgMusic").play();
+
     document.getElementById("envelope").style.display = "block";
 
 });
@@ -47,19 +47,20 @@ setInterval(createHeart,500);
 const envelope = document.getElementById("envelope");
 
 envelope.addEventListener("click", function(){
-
+document.getElementById("bgMusic").play();
     envelope.classList.add("open");
 
     setTimeout(function(){
 
-        const letter = document.getElementById("letter");
+        button.addEventListener("click", function () {
 
-        letter.style.display = "block";
+    document.getElementById("bgMusic").play();
 
-        letter.scrollIntoView({
-            behavior:"smooth"
-        });
+    button.style.display = "none";
 
+    document.getElementById("envelope").classList.remove("hidden");
+
+});
     },800);
 
 });
