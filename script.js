@@ -17,17 +17,9 @@ const button = document.getElementById("openBtn");
 
 button.addEventListener("click", function () {
 
-    const letter = document.getElementById("letter");
+    document.getElementById("envelope").style.display = "block";
 
-    letter.style.display = "block";
-
-    setTimeout(() => {
-
-        letter.scrollIntoView({
-            behavior: "smooth"
-        });
-
-    }, 100);
+});
 
 });
 const hearts = document.getElementById("hearts");
