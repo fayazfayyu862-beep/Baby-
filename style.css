@@ -272,3 +272,24 @@ opacity:1;
 transform:translateY(0);
 }
 }
+.gallery-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.gallery-buttons button{
+    padding:12px 25px;
+    border:none;
+    border-radius:30px;
+    background:#ff5ca8;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery-buttons button:hover{
+    transform:scale(1.05);
+}
