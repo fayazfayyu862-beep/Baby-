@@ -47,21 +47,20 @@ setInterval(createHeart,500);
 const envelope = document.getElementById("envelope");
 
 envelope.addEventListener("click", function(){
-document.getElementById("bgMusic").play();
+
     envelope.classList.add("open");
 
     setTimeout(function(){
 
-        button.addEventListener("click", function () {
+        const letter = document.getElementById("letter");
 
-    document.getElementById("bgMusic").play();
+        letter.style.display = "block";
 
-    button.style.display = "none";
+        letter.scrollIntoView({
+            behavior:"smooth"
+        });
 
-    document.getElementById("envelope").classList.remove("hidden");
-
-});
-    },800);
+    },1000);
 
 });
 const memories = document.querySelectorAll(".memory");
