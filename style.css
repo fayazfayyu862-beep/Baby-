@@ -9,7 +9,42 @@ font-family:'Poppins',sans-serif;
 background:#050816;
 color:white;
 overflow-x:hidden;
-overflow-y:auto;
+}
+
+#stars{
+position:fixed;
+inset:0;
+background-image:
+radial-gradient(white 1px,transparent 1px),
+radial-gradient(#ffd6ef 1px,transparent 1px);
+background-size:120px 120px,180px 180px;
+animation:stars 60s linear infinite;
+z-index:-2;
+}
+
+@keyframes stars{
+from{transform:translateY(0);}
+to{transform:translateY(-250px);}
+}
+
+.moon{
+position:fixed;
+top:50px;
+right:40px;
+width:160px;
+height:160px;
+border-radius:50%;
+background:radial-gradient(circle,#ffe5f5,#ff9bd2,#ff63b0);
+box-shadow:
+0 0 30px #ff9bd2,
+0 0 60px #ff7ac4,
+0 0 120px rgba(255,100,180,.5);
+animation:moon 4s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes moon{
+50%{transform:scale(1.08);}
 }
 
 .hero{
@@ -18,229 +53,77 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-position:relative;
-background:linear-gradient(180deg,#050816 0%,#111b3b 100%);
-}
-
-.content{
-position:relative;
-z-index:2;
 padding:20px;
 }
 
-.top-title{
+.name{
 font-family:'Great Vibes',cursive;
-font-size:42px;
-color:#ff9fd5;
+font-size:48px;
+color:#ffb3da;
 margin-bottom:20px;
 }
 
 #typewriter{
 font-size:52px;
-font-weight:700;
 margin-bottom:15px;
 }
 
-.days{
+.subtitle{
 font-size:20px;
 opacity:.8;
-margin-bottom:40px;
+margin-bottom:35px;
 }
 
 #openBtn{
-padding:18px 45px;
+padding:18px 40px;
 border:none;
 border-radius:50px;
-font-size:20px;
-cursor:pointer;
 background:#ff4fa3;
 color:white;
-box-shadow:0 0 25px rgba(255,79,163,.7);
+font-size:20px;
+cursor:pointer;
+box-shadow:0 0 25px rgba(255,79,163,.6);
 transition:.3s;
 }
 
 #openBtn:hover{
 transform:scale(1.05);
-box-shadow:0 0 40px rgba(255,79,163,1);
-}
-#stars{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-background-image:
-radial-gradient(white 1px, transparent 1px),
-radial-gradient(#ffd6f2 1px, transparent 1px),
-radial-gradient(#ffffff 2px, transparent 2px);
-
-background-size:
-120px 120px,
-180px 180px,
-250px 250px;
-
-animation:starsMove 60s linear infinite;
-opacity:.8;
-z-index:0;
-}
-
-@keyframes starsMove{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(-250px);
-}
-
-}.moon{
-position:fixed;
-top:60px;
-right:60px;
-width:180px;
-height:180px;
-border-radius:50%;
-background:radial-gradient(circle,#ffd7f0,#ff9ad5,#ff6bb0);
-box-shadow:
-0 0 40px #ff9ad5,
-0 0 80px #ff7fc7,
-0 0 150px rgba(255,120,200,.6);
-z-index:1;
-animation:moonGlow 4s ease-in-out infinite;
-}
-
-@keyframes moonGlow{
-
-0%,100%{
-transform:scale(1);
-}
-
-50%{
-transform:scale(1.06);
-}
-
-}#hearts{
-position:fixed;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:2;
-}
-
-.heart{
-position:absolute;
-bottom:-50px;
-font-size:24px;
-color:#ff8fc7;
-animation:floatHeart linear forwards;
-opacity:.8;
-}
-
-@keyframes floatHeart{
-
-0%{
-transform:translateY(0) scale(.8);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-100%{
-transform:translateY(-120vh) scale(1.4);
-opacity:0;
 }
 
 .letter{
 display:none;
+padding:80px 20px;
 min-height:100vh;
-background:#0b1024;
-padding:60px 20px;
-opacity:0;
-transform:translateY(50px);
-transition:opacity .8s ease, transform .8s ease;
+background:#0d132b;
 }
 
-.letter.show{
-display:block;
-opacity:1;
-transform:translateY(0);
-}
-
-.letter-box{
-
-max-width:700px;
-
+.letter-card{
+max-width:800px;
 margin:auto;
-
 background:rgba(255,255,255,.08);
-
 padding:40px;
-
 border-radius:25px;
-
 backdrop-filter:blur(10px);
+text-align:center;
+}
 
-box-shadow:0 0 40px rgba(255,100,180,.3);
-
+.baby-image{
+width:180px;
+height:180px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #ff8fc7;
+margin-bottom:25px;
 }
 
 .letter h2{
-
-text-align:center;
-
-margin-bottom:30px;
-
-font-size:38px;
-
-color:#ff9fd5;
-
+font-size:40px;
+color:#ffb3da;
+margin-bottom:20px;
 }
 
 .letter p{
-
-line-height:2;
-
 font-size:20px;
-
-text-align:center;
-
-}
-.envelope-section{
-display:none;
-height:100vh;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:#08101f;
-}
-
-.envelope{
-width:220px;
-height:140px;
-background:#ff7eb6;
-position:relative;
-border-radius:8px;
-cursor:pointer;
-box-shadow:0 0 40px rgba(255,126,182,.5);
-}
-
-.flap{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:70px;
-background:#ff5ca8;
-clip-path:polygon(0 0,100% 0,50% 100%);
-}
-
-.tapText{
-margin-top:25px;
-font-size:22px;
-color:white;
+line-height:2;
+white-space:pre-line;
 }
