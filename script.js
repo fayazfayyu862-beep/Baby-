@@ -26,7 +26,7 @@ const btn = document.getElementById("openBtn");
 console.log(btn);
 btn.addEventListener("click", () => {{
 
-    document.getElementById("letter").classList.add("show");
+    document.getElementById("envelopeSection").style.display = "flex";
 
     document.getElementById("letter").scrollIntoView({
         behavior: "smooth"
@@ -57,3 +57,18 @@ function createHeart(){
 }
 
 setInterval(createHeart,500);
+const envelope = document.getElementById("envelope");
+
+if(envelope){
+
+envelope.addEventListener("click",()=>{
+
+document.getElementById("letter").classList.add("show");
+
+document.getElementById("letter").scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+}
