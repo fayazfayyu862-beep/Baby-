@@ -1,74 +1,32 @@
 const text = "Hey Baby...";
-
 let index = 0;
 
-function typeWriter(){
-
-    if(index < text.length){
-
-        document.getElementById("typewriter").innerHTML += text.charAt(index);
-
+function typeWriter() {
+    if (index < text.length) {
+        document.getElementById("typewriter").textContent += text.charAt(index);
         index++;
-
-        setTimeout(typeWriter,150);
-
+        setTimeout(typeWriter, 120);
     }
-
 }
 
-window.onload = ()=>{
-
+window.onload = function () {
     typeWriter();
-
 };
 
-const btn = document.getElementById("openBtn");
-console.log(btn);
-btn.addEventListener("click", () => {{
+const button = document.getElementById("openBtn");
 
-    document.getElementById("envelopeSection").style.display = "flex";
+button.addEventListener("click", function () {
 
-    document.getElementById("letter").scrollIntoView({
-        behavior: "smooth"
-    });
+    const letter = document.getElementById("letter");
 
-});
+    letter.style.display = "block";
 
-const hearts = document.getElementById("hearts");
+    setTimeout(() => {
 
-function createHeart(){
+        letter.scrollIntoView({
+            behavior: "smooth"
+        });
 
-    const heart = document.createElement("div");
-
-    heart.innerHTML = "❤";
-
-    heart.classList.add("heart");
-
-    heart.style.left = Math.random()*100+"vw";
-
-    heart.style.animationDuration = (4+Math.random()*3)+"s";
-
-    hearts.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },7000);
-
-}
-
-setInterval(createHeart,500);
-const envelope = document.getElementById("envelope");
-
-if(envelope){
-
-envelope.addEventListener("click",()=>{
-
-document.getElementById("letter").classList.add("show");
-
-document.getElementById("letter").scrollIntoView({
-behavior:"smooth"
-});
+    }, 100);
 
 });
-
-}
